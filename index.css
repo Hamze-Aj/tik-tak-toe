@@ -1,0 +1,48 @@
+body{
+    background-color: #FAF9F6;
+    display:flex ;
+    justify-content: space-around;
+
+}
+h2{
+    font-family: 'Pacifico', cursive;
+}
+
+.game{
+    display:flex ;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.GameBoard{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 130px 130px 130px;
+    grid-template-rows: 130px 130px 130px;
+    height: 500px;
+    width: 400PX;
+
+}
+
+.square{
+    border: 1px solid #B0BEC5;
+    
+}
+
+#one, #two, #three{
+    border-top: none;
+}
+
+#one, #four, #seven{
+    border-left: none;
+}
+
+#three, #six, #nine{
+    border-right: none;
+}
+
+#seven, #eight, #nine{
+    border-bottom: none;
+}
+
