@@ -56,3 +56,22 @@ h2{
 
 }
 
+
+.square{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #00796B;
+    background-color:#FAF9F6 ;
+    font-size: xx-large;
+}
+
+.player1{
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+.player2{
+    font-size: x-large;
+    font-weight: bolder;
+}
