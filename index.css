@@ -53,6 +53,7 @@ h2{
     width: 100px;
     border-radius: 10px;
     border: none;
+    margin-bottom: 20px;
 
 }
 
@@ -74,4 +75,9 @@ h2{
 .player2{
     font-size: x-large;
     font-weight: bolder;
+}
+
+.colom{
+    display: flex;
+    flex-direction: column;
 }
