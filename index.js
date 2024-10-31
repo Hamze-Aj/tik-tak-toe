@@ -16,35 +16,39 @@ const player = (name) => {
 const firstPlayer = player(player1)
 const secondPlayer = player(player2)
 
+let player1Score = 0;
+let player2Score = 0;
 const createElement = (name) => {
+
+
     const el = document.querySelector('.winComment')
     el.textContent = `congrats ${name} you won`
     if (name == 'Draw') {
     el.textContent = `its' a draw `
-        
+    
+    return {
+        el
     }
-    return el
+}
 
 }
+const updateScore = () => {
+    if (gameBoard.checkWinner() === 'X') {
+        player1Score++;
+        document.querySelector('.player1Score').textContent = player1Score;
+        
+        
+    }
+    if (gameBoard.checkWinner() === 'O') {
+        player2Score++;
+        document.querySelector('.player2Score').textContent = player2Score;
+    }
+};
 
 const gameFlow = () => {
     
-    let player1Score = 0;
-    let player2Score = 0;
 
     
-    const updateScore = () => {
-        if (gameBoard.checkWinner() === 'X') {
-            player1Score++;
-            document.querySelector('.player1Score').textContent = player1Score;
-            
-            
-        }
-        if (gameBoard.checkWinner() === 'O') {
-            player2Score++;
-            document.querySelector('.player2Score').textContent = player2Score;
-        }
-    };
 
     
     document.querySelectorAll('.square').forEach(square => {
@@ -55,7 +59,7 @@ const gameFlow = () => {
 
     
     return {
-        updateScore
+        
     };
 };
 
@@ -89,18 +93,19 @@ const displayController = (() => {
                 createElement(String(firstPlayer))
                 
                 gameFlow()
+                updateScore();
                 
             }
             else if (gameBoard.checkWinner() && gameBoard.checkWinner() == 'O') {
                 createElement(String(secondPlayer))
                 gameFlow()
-                
+                updateScore();
 
             }
             else if (gameBoard.checkWinner() && gameBoard.checkWinner() == 'Draw') {
                 createElement('Draw')
                 gameFlow()
-
+                updateScore();
                 
             }
 
