@@ -83,6 +83,7 @@ const displayController = (() => {
 
             else {
                 squares.textContent = 'O'
+                squares.setAttribute('style', 'color:#FF6F61;')
                 squares.disabled = true;
                 playerTurn = 'x'
                 gameBoard.updateArray()
